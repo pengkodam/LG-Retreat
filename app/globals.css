@@ -1,0 +1,133 @@
+:root {
+  --bg: #f4ede0;
+  --bg-deep: #ebe0cc;
+  --ink: #2a2320;
+  --ink-soft: #5a4e45;
+  --accent: #b84a2f;
+  --accent-deep: #8a3322;
+  --gold: #c89a3e;
+  --sage: #6b8562;
+  --sky: #7a98a8;
+  --plum: #8a5a78;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(200, 154, 62, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(184, 74, 47, 0.06) 0%, transparent 50%),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(90, 78, 69, 0.015) 2px, rgba(90, 78, 69, 0.015) 4px);
+}
+
+.display {
+  font-family: 'Fraunces', Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+.italic-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-style: italic;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+.paper-card {
+  background: #faf5e8;
+  border: 1px solid rgba(90, 78, 69, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(90, 78, 69, 0.08), 0 8px 24px -12px rgba(42, 35, 32, 0.2);
+  position: relative;
+}
+
+.ink-btn {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 14px 28px;
+  border-radius: 2px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: 15px;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.ink-btn:hover:not(:disabled) {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.ink-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ghost-btn {
+  border: 1px solid var(--ink);
+  padding: 10px 20px;
+  border-radius: 2px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.ghost-btn:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+input, textarea {
+  font-family: inherit;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink-soft);
+  padding: 8px 0;
+  font-size: 16px;
+  color: var(--ink);
+  width: 100%;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-bottom-color: var(--accent);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.4s ease-out backwards;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.flicker {
+  animation: flicker 3s ease-in-out infinite;
+}
